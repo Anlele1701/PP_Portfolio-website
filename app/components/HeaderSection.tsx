@@ -10,9 +10,9 @@ export default function HeaderSection() {
 
   const navLinks = [
     { href: "#about", label: "About" },
-    { href: "#experiences", label: "Experiences" },
     { href: "#education", label: "Education" },
-    { href: "#skills", label: "Certificate and Achievements" },
+    { href: "#experiences", label: "Experiences" },
+    { href: "#certificates", label: "Certificate and Achievements" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -22,7 +22,6 @@ export default function HeaderSection() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Show/hide header
       if (currentScrollY > lastScrollY + threshold) {
         setShowHeader(false);
       } else if (currentScrollY < lastScrollY - threshold) {
@@ -30,7 +29,6 @@ export default function HeaderSection() {
       }
       setLastScrollY(currentScrollY);
 
-      // Detect active section
       const sections = navLinks.map((link) =>
         document.querySelector(link.href)
       );
@@ -57,7 +55,7 @@ export default function HeaderSection() {
       transition={{ duration: 0.3, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] border-b border-gray-700 px-4 py-3 font-mono text-green-300"
     >
-      <nav className="flex justify-center gap-6 text-sm">
+      <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm text-center sm:text-left">
         {navLinks.map((link) => {
           const isActive = activeSection === link.href;
           return (

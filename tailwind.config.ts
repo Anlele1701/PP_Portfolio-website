@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        rgb: "rgb 6s linear infinite",
+      },
+
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

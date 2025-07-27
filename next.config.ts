@@ -5,6 +5,10 @@ const basePath = isProd ? "/portfolio" : "";
 
 const nextConfig: NextConfig = {
   basePath,
+  images: {
+    unoptimized: true,
+  },
+
   output: "export",
   distDir: "dist",
 };

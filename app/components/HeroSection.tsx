@@ -31,7 +31,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-black/50 backdrop-blur-lg rounded-lg border border-gray-800 p-6"
+          className="backdrop-blur-lg rounded-lg border border-gray-800 p-6"
         >
           {/* Window control dots */}
           <div className="flex items-center gap-2 mb-4">
