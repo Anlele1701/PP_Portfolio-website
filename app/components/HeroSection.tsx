@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
+import config from "../../next.config";
+const basePath = config.basePath || "";
 export default function HeroSection() {
   const [showMore, setShowMore] = useState(false);
 
@@ -16,7 +18,12 @@ export default function HeroSection() {
 
       {/* Grid overlay */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        <div
+          className="absolute inset-0 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"
+          style={{
+            backgroundImage: `url('${basePath}/grid.svg')`,
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-4xl w-full mx-4">
@@ -37,7 +44,9 @@ export default function HeroSection() {
             {/* Avatar */}
             <div
               className="w-24 h-24 mx-auto mb-4 border border-gray-700 rounded-full bg-cover bg-center"
-              style={{ backgroundImage: "url('/avatar.jpeg')" }}
+              style={{
+                backgroundImage: `url('${basePath}/avatar.jpeg')`,
+              }}
             ></div>
 
             {/* User info */}
