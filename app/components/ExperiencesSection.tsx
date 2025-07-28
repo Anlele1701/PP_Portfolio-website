@@ -3,14 +3,44 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import config from "../../next.config";
+const basePath = config.basePath || "";
 const experiences = [
   {
-    logo: "acb-logo.webp",
-    position: "Frontend Developer",
+    logo: `${basePath}/acb_logo.png`,
+    position: "Backend Developer",
     company: "Asia Commercial Joint Stock Bank",
     city: "Ho Chi Minh City",
     type: "Fulltime",
-    time: "September 2024 - Present",
+    time: "May 2025 - Present",
+    information: [
+      "Developed adapter for SSMedia services to support payment integration for car bookings, hotel bookings, travel combos and top-ups.",
+      "Migrated Kong Gateway to IBM API Connect, enhancing API management.",
+      "Developed payment APIs for partner platforms such as EnViet, PTI, ensuring secure and efficient transactions.",
+      "Integrated VCB payment gateway with ACB's core banking system, enhancing transaction processing.",
+      "Developed and deployed services to staging environment using Docker and Kubernetes, ensuring smooth deployment and scalability.",
+    ],
+    tech: [
+      "Java",
+      "Spring Boot",
+      "Gitlab CI/CD",
+      "RabbitMQ",
+      "Oracle",
+      "Docker",
+      "Kubernetes",
+      "ArgoCD",
+      "IBM API Connect",
+      "Kong Gateway",
+    ],
+    meta: [],
+  },
+  {
+    logo: `${basePath}/acb_logo.png`,
+    position: "Backend Developer",
+    company: "Asia Commercial Joint Stock Bank",
+    city: "Ho Chi Minh City",
+    type: "Internship",
+    time: "September 2024 - May 2025",
     information: [
       "Integrated Core Banking with partner platforms via Payment APIs.",
       "Implemented invoice retrieval and SOAP XML mapping in EVNHCM project.",
@@ -18,21 +48,39 @@ const experiences = [
       "Maintained Oracle databases for high-volume, reliable transactions.",
       "Developed adapter for SSMedia services to support payment integration for bookings and top-ups.",
     ],
+    tech: [
+      "Java",
+      "Spring Boot",
+      "Gitlab CI/CD",
+      "RabbitMQ",
+      "Oracle",
+      "Docker",
+      "Kubernetes",
+    ],
     meta: [],
   },
   {
-    logo: "acb-logo.webp",
-    position: "Collaborate Lecturer",
+    logo: `${basePath}/teky_logo.jpg`,
+    position: "Collaborative Lecturer",
     company: "Teky Young Technology Education Academy",
     city: "Ho Chi Minh City",
     type: "Collaborate",
     time: "May 2022 - Dec 2022",
     information: [
       "Diagnosed student needs through active listening techniques and questioning strategies.",
-      "Implemented invoice retrieval and SOAP XML mapping in EVNHCM project.",
-      "Built FTPS image upload feature with RabbitMQ for PTI car insurance platform.",
-      "Maintained Oracle databases for high-volume, reliable transactions.",
-      "Developed adapter for SSMedia services to support payment integration for bookings and top-ups.",
+      "Guided students in 3D modeling, game creation, and spatial thinking using Tinkercad and Roblox Studio",
+      "Taught core programming and robotics through platforms like Tynker, Lego Wedo, Mindstorms, and CodeKitten",
+      "Encouraged creative problem-solving and logical thinking through hands-on tech activities",
+      "Created an engaging and inclusive environment for young learners to explore technology and coding",
+    ],
+    tech: [
+      "Tynker",
+      "Roblox Studio",
+      "Lego Wedo",
+      "Mindstorms",
+      "CodeKitten",
+      "Tinkercad",
+      "Scratch",
     ],
     meta: [],
   },
@@ -69,11 +117,11 @@ export default function ExperienceTimeline() {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
                     <Image
-                      src={`/logos/${exp.logo}`}
+                      src={`${exp.logo}`}
                       alt={`${exp.company} logo`}
-                      width={32}
-                      height={32}
-                      className="rounded-md border border-gray-600"
+                      width={40}
+                      height={40}
+                      className="w-[40px] h-[40px] rounded-md border border-gray-600 bg-white object-contain"
                     />
                     <h3 className="text-lg font-semibold text-white">
                       {exp.position}
@@ -98,6 +146,16 @@ export default function ExperienceTimeline() {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
+                <div className="flex flex-wrap gap-2">
+                  {exp.tech?.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-sm px-3 py-1 bg-green-500/10 rounded-full border border-green-500/20 transition transform hover:scale-105 hover:bg-green-500/20 hover:text-green-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
                 {/* Optional meta links */}
                 {exp.meta.length > 0 && (
