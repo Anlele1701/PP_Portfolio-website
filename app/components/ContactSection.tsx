@@ -55,7 +55,7 @@ export default function ContactSection() {
               >
                 an.lethanhduy@outlook.com
               </motion.a>
-              <p className="text-green-500 mt-8 mb-2">$ cat resume.pdf</p>
+              {/* <p className="text-green-500 mt-8 mb-2">$ cat resume.pdf</p>
               <motion.a
                 href="/path-to-resume.pdf"
                 target="_blank"
@@ -71,7 +71,7 @@ export default function ContactSection() {
                   <path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" />
                 </svg>
                 <span>Download Resume</span>
-              </motion.a>
+              </motion.a> */}
               <p className="text-green-500 mt-8 mb-4">$ ls ./social-links</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {/* Github */}

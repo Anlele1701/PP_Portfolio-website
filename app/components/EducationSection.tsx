@@ -80,7 +80,8 @@ export default function EducationSection() {
               </p>
               <p className="text-sm text-gray-400 mb-4">
                 <a
-                  href="/transcript.pdf"
+                  href="https://drive.google.com/file/d/1EC3TSd_5b8f1kbUuu4thBfUTZnrbzIjr/view?usp=share_link"
+                  target="_blank"
                   download
                   className="underline hover:text-green-400 transition"
                 >

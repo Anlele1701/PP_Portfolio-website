@@ -12,7 +12,11 @@ export default function HeaderSection() {
     { href: "#about", label: "About" },
     { href: "#education", label: "Education" },
     { href: "#experiences", label: "Experiences" },
-    { href: "#certificates", label: "Certificate and Achievements" },
+    {
+      href: "#certificates",
+      label: "Certificates",
+    },
+    { href: "#awards", label: "Awards and Achievements" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -22,12 +26,12 @@ export default function HeaderSection() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY + threshold) {
-        setShowHeader(false);
-      } else if (currentScrollY < lastScrollY - threshold) {
-        setShowHeader(true);
-      }
-      setLastScrollY(currentScrollY);
+      // if (currentScrollY > lastScrollY + threshold) {
+      //   setShowHeader(false);
+      // } else if (currentScrollY < lastScrollY - threshold) {
+      //   setShowHeader(true);
+      // }
+      // setLastScrollY(currentScrollY);
 
       const sections = navLinks.map((link) =>
         document.querySelector(link.href)
