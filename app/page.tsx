@@ -15,7 +15,7 @@ export default function BackendPortfolio() {
       <EducationSection />
       <ExperiencesSection />
       <CertificatesSection />
-      {/* <AwardsSection /> */}
+      <AwardsSection />
       <ContactSection />
     </main>
   );

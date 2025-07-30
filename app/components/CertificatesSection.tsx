@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 import config from "../../next.config";
+import Image from "next/image";
 const basePath = config.basePath || "";
 export default function CertificatesSection() {
   return (
@@ -41,7 +42,7 @@ export default function CertificatesSection() {
               key={i}
               className="bg-gray-900/50 p-4 rounded-xl border border-gray-800 group relative overflow-hidden"
             >
-              <img
+              <Image
                 src={cert.image}
                 alt={cert.title}
                 className="mb-4 rounded-lg h-44 w-full object-cover"

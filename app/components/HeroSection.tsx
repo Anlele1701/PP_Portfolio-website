@@ -71,7 +71,8 @@ export default function HeroSection() {
                 "Docker",
                 "Kubernetes",
                 "ArgoCD",
-                "AWS",
+                "Git",
+                "CI/CD",
               ].map((skill) => (
                 <span
                   key={skill}
