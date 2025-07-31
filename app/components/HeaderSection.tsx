@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function HeaderSection() {
   const [showHeader, setShowHeader] = useState(true);
@@ -12,10 +13,7 @@ export default function HeaderSection() {
     { href: "#about", label: "About" },
     { href: "#education", label: "Education" },
     { href: "#experiences", label: "Experiences" },
-    {
-      href: "#certificates",
-      label: "Certificates",
-    },
+    { href: "#certificates", label: "Certificates" },
     { href: "#awards", label: "Awards and Achievements" },
     { href: "#contact", label: "Contact" },
   ];
@@ -25,13 +23,6 @@ export default function HeaderSection() {
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // if (currentScrollY > lastScrollY + threshold) {
-      //   setShowHeader(false);
-      // } else if (currentScrollY < lastScrollY - threshold) {
-      //   setShowHeader(true);
-      // }
-      // setLastScrollY(currentScrollY);
 
       const sections = navLinks.map((link) =>
         document.querySelector(link.href)
@@ -46,6 +37,11 @@ export default function HeaderSection() {
           }
         }
       }
+
+      // Optional: Use this block to hide/show header based on scroll direction
+      // if (currentScrollY > lastScrollY + threshold) setShowHeader(false);
+      // else if (currentScrollY < lastScrollY - threshold) setShowHeader(true);
+      // setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
