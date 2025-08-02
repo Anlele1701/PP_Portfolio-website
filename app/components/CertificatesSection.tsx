@@ -42,7 +42,7 @@ export default function CertificatesSection() {
               key={i}
               className="bg-gray-900/50 p-4 rounded-xl border border-gray-800 group relative overflow-hidden"
             >
-              <Image
+              <img
                 src={cert.image}
                 alt={cert.title}
                 className="mb-4 rounded-lg h-44 w-full object-cover"

@@ -10,6 +10,20 @@ const basePath = config.basePath || "";
 
 const achievements = [
   {
+    title:
+      "Graduation from HUFLIT with a Bachelor's Degree in Information Technology",
+    year: "March 2025",
+    category: ["Academic", "HUFLIT", "Graduation"],
+    content: `After years of late-night coding sessions, group projects, and countless cups of coffee, I finally crossed the finish line — I graduated from HUFLIT with distinction in Information Technology.
+This moment wasn’t just about receiving a degree. It was about the journey: the challenges I faced, the mentors who guided me, and the friendships that made it all worthwhile. I still remember the excitement of building my first backend system, the nerves before presenting in front of the faculty, and the quiet pride of seeing my efforts recognized.
+Graduating with distinction is a reflection of the dedication I poured into every assignment, every exam, and every opportunity to grow. Now, with this chapter behind me, I’m stepping into the tech industry with confidence, curiosity, and a deep appreciation for the foundation HUFLIT has given me.
+Here’s to the next adventure — and to never stopping learning.`,
+    images: [
+      `${basePath}/achievements/academics/huflit_graduation_parents.jpg`,
+      `${basePath}/achievements/academics/huflit_graduation_solo.jpg`,
+    ],
+  },
+  {
     title: "The Outstanding Next Banker Award",
     year: "January 2025",
     category: ["Workplace", "The Next Banker"],
@@ -93,7 +107,7 @@ export default function AwardsBlog() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {item.images.map((src, i) => (
-                <Image
+                <img
                   key={i}
                   src={src}
                   alt={`${item.title} image ${i + 1}`}
@@ -117,14 +131,18 @@ export default function AwardsBlog() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    onClick={closeModal} // 👈 Close when image is clicked
-                    className="cursor-pointer"
+                    onClick={closeModal}
+                    className="cursor-pointer max-w-4xl w-full px-4"
                   >
-                    <Image
-                      src={selectedImage}
-                      alt="Full view"
-                      className="max-w-full max-h-full rounded-lg"
-                    />
+                    <div className="relative w-full h-[80vh]">
+                      <Image
+                        src={selectedImage}
+                        alt="Full view"
+                        fill
+                        className="object-contain rounded-lg"
+                        sizes="100vw"
+                      />
+                    </div>
                   </motion.div>
                 </ReactModal>
               )}
